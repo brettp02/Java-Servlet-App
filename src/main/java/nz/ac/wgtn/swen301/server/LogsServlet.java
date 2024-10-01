@@ -90,7 +90,40 @@ public class LogsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        Gson gson = new Gson();
+        try {
+            LogEntry newLog = gson.fromJson(req.getReader(),LogEntry.class);
+
+            if(!isValidLogEntry(newLog)) {
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Invalid Log Entry");
+                return;
+            }
+
+            boolean exists = Persistency.DB.stream()
+                    .anyMatch(log -> log.id().equals(newLog.id()));
+            if (exists) {
+                resp.sendError(HttpServletResponse.SC_CONFLICT,"Log Entry Already Exists");
+                return;
+            }
+
+            Persistency.DB.add(newLog);
+            resp.setStatus(HttpServletResponse.SC_CREATED);
+        } catch (JsonSyntaxException e) {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Improper JSON");
+        }
+    }
+
+    /**
+     * Checks if the current LogEntry object is valid
+     *
+     * @param logEntry - the logEntry object
+     * @return
+     */
+    private boolean isValidLogEntry(LogEntry logEntry) {
+        if (logEntry == null || logEntry.id() == null || logEntry.id().isEmpty() || logEntry.message() == null || logEntry.timestamp() == null || logEntry.thread() == null || logEntry.logger() == null || logEntry.level() == null) {
+            return false;
+        }
+        return true;
     }
 
     @Override
