@@ -90,7 +90,7 @@ public class LogsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try {
             LogEntry newLog = gson.fromJson(req.getReader(),LogEntry.class);
 
@@ -128,6 +128,7 @@ public class LogsServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doDelete(req, resp);
+        Persistency.DB.clear();
+        resp.setStatus(HttpServletResponse.SC_OK);
     }
 }
