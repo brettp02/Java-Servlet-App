@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 
 /**
- *  The LogsServlet Class uses Extends jakarta.servlet.http.HttpServlet to implement the /logs services
+ *  The LogsServlet Class  Extends jakarta.servlet.http.HttpServlet to implement the /logs services
  *  by overriding the standard 'doGet()', 'doPost()', and 'doDelete()' methods
  *
  * @studentId - 300635306
