@@ -37,6 +37,7 @@ public class LogsServlet extends HttpServlet {
         // Make sure parameters are non null
         if (limitParam == null || levelParam == null) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Missinng required parameters: 'limit' and 'level'");
+            return;
         }
 
         int limit;
@@ -55,6 +56,7 @@ public class LogsServlet extends HttpServlet {
         List<String> validLevels = Arrays.asList("all","debug","info","warn","error","fatal","trace","off");
         if (!validLevels.contains(levelParam.toLowerCase())) {
             resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Inavalid level parameter");
+            return;
         }
 
         // Severity levels
@@ -77,7 +79,7 @@ public class LogsServlet extends HttpServlet {
                 .collect(Collectors.toList());
 
         // Convert log to JSON
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String jsonResponse = gson.toJson(filteredLogs);
 
         //set response header/body
