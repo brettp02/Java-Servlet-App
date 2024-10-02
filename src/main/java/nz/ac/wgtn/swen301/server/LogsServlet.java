@@ -128,7 +128,7 @@ public class LogsServlet extends HttpServlet {
 
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Persistency.DB.clear();
+        Persistency.clearDB();
         resp.setStatus(HttpServletResponse.SC_OK);
     }
 }

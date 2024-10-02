@@ -4,12 +4,8 @@ import jakarta.servlet.ServletException;
 import org.junit.jupiter.api.*;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpServletResponse;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
-import java.lang.reflect.Type;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class TestGetLogs {
