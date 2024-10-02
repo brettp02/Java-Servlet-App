@@ -10,4 +10,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class Persistency {
     public static List<LogEntry> DB = new CopyOnWriteArrayList<>();
+
+    public static void clearDB() {
+        DB.clear();
+    }
 }

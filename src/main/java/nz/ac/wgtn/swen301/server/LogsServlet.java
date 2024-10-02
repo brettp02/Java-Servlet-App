@@ -36,7 +36,7 @@ public class LogsServlet extends HttpServlet {
 
         // Make sure parameters are non null
         if (limitParam == null || levelParam == null) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Missinng required parameters: 'limit' and 'level'");
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Missing required parameters: 'limit' and 'level'");
             return;
         }
 
@@ -55,7 +55,7 @@ public class LogsServlet extends HttpServlet {
         // Valid levels
         List<String> validLevels = Arrays.asList("all","debug","info","warn","error","fatal","trace","off");
         if (!validLevels.contains(levelParam.toLowerCase())) {
-            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Inavalid level parameter");
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST,"Invalid level parameter");
             return;
         }
 
