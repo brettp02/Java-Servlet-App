@@ -43,7 +43,7 @@ public class StatsCSVServlet extends HttpServlet{
 
         // Set content to text/csv UTF-8
         resp.setContentType("text/csv");
-        resp.setCharacterEncoding("UTF-8");
+        //resp.setCharacterEncoding("UTF-8");
 
         // Get printwriter obj
         PrintWriter out = resp.getWriter();
