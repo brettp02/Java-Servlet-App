@@ -8,6 +8,7 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
+
 public class TestDeleteLogs {
     private LogsServlet logsServlet;
     private MockHttpServletResponse response;
