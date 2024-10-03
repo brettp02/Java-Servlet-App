@@ -29,6 +29,14 @@ public class LogsServlet extends HttpServlet {
         super();
     }
 
+    /**
+     *  Implements the GET services (by passing in appropriate options, you can search for avaliable logs)
+     *
+     * @param req HttpServletRequest object
+     * @param resp HttpServletResponse object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String limitParam = req.getParameter("limit");
@@ -88,6 +96,14 @@ public class LogsServlet extends HttpServlet {
         resp.getWriter().write(jsonResponse);
     }
 
+    /**
+     *  Implements the specified POST services (adds log events to Persistency.DB)
+     *
+     * @param req HttpServletRequest object
+     * @param resp HttpServletResponse object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -126,6 +142,14 @@ public class LogsServlet extends HttpServlet {
         return true;
     }
 
+    /**
+     *  Implements the DELETE services (Deletes all LogEvents for Persistency.DB)
+     *
+     * @param req HttpServletRequest object
+     * @param resp HttpServletResponse object
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Persistency.clearDB();
