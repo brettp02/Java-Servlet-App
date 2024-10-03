@@ -88,7 +88,7 @@ public class StatsHTMLServlet extends HttpServlet{
         sb.append("<table>\n");
 
         // Header Row
-        sb.append("<tr><th>Logger</th>");
+        sb.append("<tr><th>logger</th>");
         for (String level : logLevels) {
             sb.append("<th>").append(level).append("</th>");
         }
