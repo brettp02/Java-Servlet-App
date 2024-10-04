@@ -69,7 +69,7 @@ public class TestStatsCSV {
             levelMap.put(level, levelMap.getOrDefault(level, 0) + 1);
         }
 
-        System.out.println(expectedCounts);
+        //System.out.println(expectedCounts);
 
         // Iterate over data rows
         for (int i = 1; i < lines.length; i++) {
@@ -107,7 +107,7 @@ public class TestStatsCSV {
         String content = response.getContentAsString();
 
         // Print the content
-        System.out.println("CSV Response Content:\n" + content);
+        //System.out.println("CSV Response Content:\n" + content);
 
         // Check header
         String[] lines = content.split("\n");
