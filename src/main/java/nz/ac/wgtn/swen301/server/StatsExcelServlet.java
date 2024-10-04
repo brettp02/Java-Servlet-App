@@ -42,7 +42,7 @@ public class StatsExcelServlet extends HttpServlet{
         List<String> logLevels = Arrays.asList("ALL", "TRACE", "DEBUG", "INFO", "WARN", "ERROR", "FATAL", "OFF");
 
         resp.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        resp.setCharacterEncoding("UTF-8");
+        //resp.setCharacterEncoding("UTF-8");
 
         // Apache POI Workbook
         Workbook workbook = new XSSFWorkbook();
