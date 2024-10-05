@@ -1,7 +1,5 @@
-package nz.ac.wgtn.swen301.server;
+package nz.ac.wgtn.swen301.a3.server;
 
-import nz.ac.wgtn.swen301.server.LogEntry;
-import nz.ac.wgtn.swen301.server.Persistency;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.web.MockHttpServletRequest;

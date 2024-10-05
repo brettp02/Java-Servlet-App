@@ -1,6 +1,5 @@
-package nz.ac.wgtn.swen301.server;
+package nz.ac.wgtn.swen301.a3.server;
 
-import jakarta.servlet.Servlet;
 import jakarta.servlet.ServletException;
 import org.junit.jupiter.api.*;
 import org.springframework.mock.web.MockHttpServletRequest;

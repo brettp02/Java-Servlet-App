@@ -1,4 +1,4 @@
-package nz.ac.wgtn.swen301.server;
+package nz.ac.wgtn.swen301.a3.server;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;

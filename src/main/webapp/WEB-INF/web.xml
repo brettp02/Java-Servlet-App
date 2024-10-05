@@ -7,7 +7,7 @@
 
     <servlet>
         <servlet-name>LogsServlet</servlet-name>
-        <servlet-class>nz.ac.wgtn.swen301.server.LogsServlet</servlet-class>
+        <servlet-class>nz.ac.wgtn.swen301.a3.server.LogsServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>

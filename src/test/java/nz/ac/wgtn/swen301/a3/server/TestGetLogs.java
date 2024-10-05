@@ -1,4 +1,4 @@
-package nz.ac.wgtn.swen301.server;
+package nz.ac.wgtn.swen301.a3.server;
 
 import jakarta.servlet.ServletException;
 import org.junit.jupiter.api.*;
