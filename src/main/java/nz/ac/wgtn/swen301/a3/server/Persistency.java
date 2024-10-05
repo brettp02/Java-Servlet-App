@@ -1,6 +1,5 @@
-package nz.ac.wgtn.swen301.server;
+package nz.ac.wgtn.swen301.a3.server;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
